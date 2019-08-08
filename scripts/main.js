@@ -7,7 +7,7 @@ const totalProfits = profits2017.reduce((currentTotal, nextValue) => currentTota
 console.log(`The total profit for 2017 was $${totalProfits}`)
 
 
-// Refactored code to create re-usable functions for each question below
+// Functions for questions below
 // ---------------------------------------------
 const createCountObject = (arr) => {
   const countObj = {}
@@ -69,19 +69,9 @@ salespeopleAndProfits.forEach(obj => {
   }
 })
 
-const getHighestProfit = () => {
-  let currentHighestValue = 0
-  let currentHighestProfit
-  for (person in profitCount) {
-    if (profitCount[person] > currentHighestValue) {
-      currentHighestValue = profitCount[person]
-      currentHighestProfit = person
-    }
-  }
-  return currentHighestProfit
-}
+const personWithHighestProfit = getHighestKeyInCountObj(profitCount)
 
-console.log(`The person with the highest profit was ${getHighestProfit()}`)
+console.log(`The person with the highest profit was ${personWithHighestProfit}`)
 
 
 // 5. Which model was the most popular?
@@ -145,6 +135,19 @@ console.log(`The bank that provided the most loans to customers was ${bankWithMo
 //   }
 //   return currentHighestPerson
 // }
+
+
+// const getHighestProfit = () => {
+  //   let currentHighestValue = 0
+  //   let currentHighestProfit
+  //   for (person in profitCount) {
+  //     if (profitCount[person] > currentHighestValue) {
+  //       currentHighestValue = profitCount[person]
+  //       currentHighestProfit = person
+  //     }
+  //   }
+  //   return currentHighestProfit
+  // }
 
 
 
